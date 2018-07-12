@@ -1,16 +1,30 @@
-function checkNumbers(...variables) {
-    for (let i = 0; i < variables.length; i++) {
-        if (typeof variables[i] !== 'number') {
-            return false;
+function checkIsNumbers(numbers) {
+    for (let i = 0; i < numbers.length; i++) {
+        if (Number.isNaN(numbers[i])) {
+            throw 'One of the variables is not number';
         }
     }
-    return true;
 }
-function checkArgs(...args){
+function checkCountArgs(args){
     if (args.length === 0) {
-        throw 'count parameters equally 0';
+        throw 'Count parameters equally 0';
     }
-    if (!checkNumbers(...args)) {
-        throw 'one of the variables is not number';
+}
+function checkIsArray(arr){
+    if (!Array.isArray(arr))
+    {
+        throw 'This is not array';
+    }
+}
+function checkIsObject(obj){
+    if (typeof obj !== 'object')
+    {
+        throw 'This is not object';
+    }
+}
+function checkIsFunction(fn){
+    if (typeof fn !== 'function')
+    {
+        throw 'This is not function';
     }
 }
