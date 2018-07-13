@@ -10,7 +10,7 @@ function curry(func = required()) {
     function nest(N, args) {
         return (...xs) => {
             if (!Number.isInteger(...xs)) {
-                throw new Error('argument is not a integer');
+                throw new Error('Argument is not a integer');
             }
             if (N - xs.length === 0) {
                 return func(...args, ...xs);
